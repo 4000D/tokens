@@ -1,0 +1,54 @@
+{
+  "name": "0x-smart-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "transpile": "rm -rf ./transpiled; copyfiles ./build/**/* ./transpiled; tsc",
+    "test": "npm run transpile; truffle test",
+    "compile": "rm -rf build/contracts; truffle compile",
+    "migrate": "npm run transpile; truffle migrate",
+    "deploy": "npm run migrate --network kovan",
+    "testrpc": "testrpc --networkId 50"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xProject/0x-Smart-Contracts.git"
+  },
+  "author": "abandeali1@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xProject/0x-Smart-Contracts/issues"
+  },
+  "homepage": "https://github.com/0xProject/0x-Smart-Contracts#readme",
+  "devDependencies": {
+    "@types/bignumber.js": "^4.0.2",
+    "@types/bluebird": "^3.5.3",
+    "@types/lodash": "^4.14.63",
+    "@types/node": "^7.0.13",
+    "@types/request-promise-native": "^1.0.2",
+    "copyfiles": "^1.2.0",
+    "dirty-chai": "^2.0.0",
+    "solc": "^0.4.11",
+    "ethereumjs-testrpc": "4.0.1",
+    "truffle": "3.4.3",
+    "typescript": "^2.2.2",
+    "web3-typescript-typings": "0.0.3"
+  },
+  "dependencies": {
+    "bignumber.js": "^4.0.0",
+    "bluebird": "^3.5.0",
+    "bn.js": "^4.11.6",
+    "es6-promisify": "^5.0.0",
+    "ethereumjs-abi": "^0.6.4",
+    "ethereumjs-util": "^5.1.1",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3",
+    "tslint": "^4.5.1",
+    "tslint-config-0xproject": "^0.0.2"
+  }
+}
